@@ -1,7 +1,8 @@
+import 'dotenv/config'
 import express from "express"
 
 const app = express()
-const port = 8000
+const port =  process.env.PORT || 8000
 
 app.use(express.json())
 
@@ -56,36 +57,6 @@ app.delete('/product/:id', (req, res) => {
     return res.status(200).send("Deleted")
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.get("/", (req, res) => {
-//     res.send("Hello Node from Rahul.")
-// })
-// app.get("/about", (req, res) => {
-//     res.send("This is about page.")
-// })
-// app.get("/shop", (req, res) => {
-//     res.send("Shopping")
-// })
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}...`)
